@@ -1,15 +1,23 @@
 package com.gitlab.rmarzec.task;
 
+import com.gitlab.rmarzec.BaseTest;
 import com.gitlab.rmarzec.framework.utils.DriverFactory;
-import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Task3Test {
+public class Task3Test extends BaseTest {
+
+    @BeforeClass
+    private void setUp() {
+        webDriver = new DriverFactory().initDriver();
+        initializeStepdefs();
+    }
 
     @Test
-    public void Task3Test(){
-        DriverFactory driverFactory = new DriverFactory();
-        WebDriver webDriver = driverFactory.initDriver();
-        
+    public void Task3Test() {
+
+        googleStepdefs
+                .openApplication()
+                .agreeCookies();
     }
 }

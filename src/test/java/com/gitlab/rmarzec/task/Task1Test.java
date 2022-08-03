@@ -1,15 +1,13 @@
 package com.gitlab.rmarzec.task;
 
+import com.gitlab.rmarzec.BaseTest;
 import com.gitlab.rmarzec.framework.utils.DriverFactory;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import java.util.List;
 
 
-public class Task1Test {
+public class Task1Test extends BaseTest {
 
     @Test
     public void Task1Test(){
