@@ -23,7 +23,7 @@ public class YoutubeHomePage extends WebPage {
     @FindBy(xpath = ".//ytd-thumbnail-overlay-time-status-renderer")
     private WebElement tileTimeLenght;
 
-    @FindBy(xpath = ".//ytd-rich-item-renderer//div[contains(@class,'ytd-rich-item-renderer')]")
+    @FindBy(xpath = ".//ytd-rich-grid-row//ytd-rich-item-renderer//div[contains(@class,'ytd-rich-item-renderer')]")
     private List<WebElement> listOfYoutubeFilms;
 
     public YoutubeHomePage(WebDriver driver) {
