@@ -28,16 +28,18 @@ public class GoogleStepdefs extends BaseStepdefs {
         return this;
     }
 
-    public W3SchoolsCookieWindow searchForWithLuckyPick(String text) {
+    public GoogleStepdefs searchForWithLuckyPick(String text) {
         new GoogleHomePage(driver).enterSearchText(text);
         new GoogleSearchResultsWindow(driver).clickImFellingLuckyButton();
         try {
-            return new W3SchoolsCookieWindow(driver).isAt();
+            new W3SchoolsCookieWindow(driver).isAt();
+            return this;
         }
         catch (NoSuchElementException ex) {
             System.out.println(driver.getCurrentUrl());
             new W3SchoolsStepdefs(driver).openTagSelectPage();
-            return new W3SchoolsCookieWindow(driver).isAt();
+            new W3SchoolsCookieWindow(driver).isAt();
+            return this;
         }
     }
 }

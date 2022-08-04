@@ -1,5 +1,6 @@
 package com.gitlab.rmarzec.framework.utils.locators_utils;
 
+import lombok.Getter;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
@@ -7,7 +8,9 @@ import java.util.List;
 
 public class LocatorListUtils {
 
+    @Getter
     private List<WebElement> listOfWebelements;
+
     public LocatorListUtils (List<WebElement> listOfWebelements) {
         this.listOfWebelements = listOfWebelements;
     }
