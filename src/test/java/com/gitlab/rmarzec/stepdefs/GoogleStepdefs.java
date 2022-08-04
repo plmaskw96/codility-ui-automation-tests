@@ -1,8 +1,8 @@
 package com.gitlab.rmarzec.stepdefs;
 
-import com.gitlab.rmarzec.framework.pages.google.home_page.GoogleHomePage;
-import com.gitlab.rmarzec.framework.pages.google.home_page.windows.GoogleCookieWindow;
-import com.gitlab.rmarzec.framework.pages.google.home_page.windows.GoogleSearchResultsWindow;
+import com.gitlab.rmarzec.framework.pages.google.homepage.GoogleHomePage;
+import com.gitlab.rmarzec.framework.pages.google.homepage.windows.GoogleCookieWindow;
+import com.gitlab.rmarzec.framework.pages.google.homepage.windows.GoogleSearchResultsWindow;
 import com.gitlab.rmarzec.framework.pages.w3_schools.tags.windows.W3SchoolsCookieWindow;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;

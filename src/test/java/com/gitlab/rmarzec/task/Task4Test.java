@@ -1,23 +1,29 @@
 package com.gitlab.rmarzec.task;
 
+import com.gitlab.rmarzec.BaseTest;
 import com.gitlab.rmarzec.framework.utils.DriverFactory;
-import com.gitlab.rmarzec.model.YTTile;
+import com.gitlab.rmarzec.framework.pages.youtube.homepage.component.YTTile;
+import com.gitlab.rmarzec.stepdefs.BaseStepdefs;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Task4Test {
+public class Task4Test extends BaseTest {
 
+    @BeforeClass
+    private void setUp() {
+        webDriver = new DriverFactory().initDriver();
+        initializeStepdefs();
+    }
     @Test
-    public void Task4Test(){
-        DriverFactory driverFactory = new DriverFactory();
-        WebDriver webDriver = driverFactory.initDriver();
-        
-        //Lista kafelkow
-        List<YTTile> ytTileList = new ArrayList<YTTile>();
-        
+    public void Task4Test() {
+        youtubeStepdefs
+                .openHomePage()
+                .agreeCookies()
+                .printFirstTilesTitleChannelAndLenghtByNumber(12);
     }
 }

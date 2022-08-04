@@ -1,8 +1,6 @@
 package com.gitlab.rmarzec.framework.utils;
 
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
@@ -16,6 +14,15 @@ public class WebPage {
         this.driver = driver;
         this.webWaitUtils = new WebWaitUtils(driver);
         PageFactory.initElements(driver,this);
+    }
+
+    public boolean isDisplayed(WebElement webElement) {
+        try {
+            return webElement.isDisplayed();
+        }
+        catch (NoSuchElementException e) {
+            return false;
+        }
     }
 
     public void switchToFrame(WebElement webElement) {
@@ -39,6 +46,10 @@ public class WebPage {
 
     public void selectOption(WebElement element, String option) {
         new Select(element).selectByVisibleText(option);
+    }
+
+    public void scrollToElement(WebElement webElement) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", webElement);
     }
 
     public WebElement getSelectOption(WebElement element, String option) {

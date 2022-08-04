@@ -1,6 +1,6 @@
-package com.gitlab.rmarzec.framework.pages.google.home_page;
+package com.gitlab.rmarzec.framework.pages.google.homepage;
 
-import com.gitlab.rmarzec.framework.pages.google.home_page.windows.GoogleSearchResultsWindow;
+import com.gitlab.rmarzec.framework.pages.google.homepage.windows.GoogleSearchResultsWindow;
 import com.gitlab.rmarzec.framework.utils.Timeouts;
 import com.gitlab.rmarzec.framework.utils.WebPage;
 import org.openqa.selenium.WebDriver;

@@ -1,6 +1,6 @@
-package com.gitlab.rmarzec.framework.pages.google.home_page.windows;
+package com.gitlab.rmarzec.framework.pages.google.homepage.windows;
 
-import com.gitlab.rmarzec.framework.pages.google.home_page.model.GoogleSearchResultModel;
+import com.gitlab.rmarzec.framework.pages.google.homepage.model.GoogleSearchResultModel;
 import com.gitlab.rmarzec.framework.utils.Timeouts;
 import com.gitlab.rmarzec.framework.utils.WebPage;
 import com.gitlab.rmarzec.framework.utils.locators_utils.LocatorListUtils;
@@ -24,7 +24,7 @@ public class GoogleSearchResultsWindow extends WebPage {
     @FindBy(xpath = ".//input[@name='btnI']")
     private List<WebElement> buttonsList;
 
-    List<GoogleSearchResultModel> googleSearchResultModels;
+    private List<GoogleSearchResultModel> googleSearchResultModels;
 
     public GoogleSearchResultsWindow(WebDriver driver) {
         super(driver);
