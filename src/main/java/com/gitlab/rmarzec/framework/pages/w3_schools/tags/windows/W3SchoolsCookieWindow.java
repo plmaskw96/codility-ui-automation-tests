@@ -1,6 +1,6 @@
-package com.gitlab.rmarzec.framework.pages.w3_schools.windows;
+package com.gitlab.rmarzec.framework.pages.w3_schools.tags.windows;
 
-import com.gitlab.rmarzec.framework.pages.w3_schools.W3SchoolsTagSelectPage;
+import com.gitlab.rmarzec.framework.pages.w3_schools.tags.W3SchoolsTagSelectPage;
 import com.gitlab.rmarzec.framework.utils.Timeouts;
 import com.gitlab.rmarzec.framework.utils.WebPage;
 import com.gitlab.rmarzec.framework.utils.locators_utils.LocatorListUtils;
@@ -17,6 +17,9 @@ public class W3SchoolsCookieWindow extends WebPage {
     @FindBy(xpath = "//div[contains(@class, 'sn-privacy')]/ancestor::div[@id='snigel-cmp-framework']")
     private WebElement pageContainer;
 
+    @FindBy(xpath = ".//div[@class='sn-tabs learn']")
+    private WebElement privacyPolicyDescription;
+
     @FindBy(xpath = ".//div[contains(@class,'sn-b-def')]")
     private List<WebElement> buttonsList;
 
@@ -26,13 +29,13 @@ public class W3SchoolsCookieWindow extends WebPage {
     }
 
     public W3SchoolsCookieWindow isAt() {
-        webWaitUtils.waitForClickable(buttonsList.get(0), Timeouts.MEDIUM);
+        webWaitUtils.waitForClickable(privacyPolicyDescription, Timeouts.MEDIUM);
         return this;
     }
 
     public W3SchoolsTagSelectPage clickAgreeButton() {
         clickElement(new LocatorListUtils(buttonsList).getElementFromListByName("Accept all & visit the site"));
-        webWaitUtils.waitForNotVisible(pageContainer, Timeouts.LOW);
+        webWaitUtils.waitForNotVisible(pageContainer, Timeouts.VERY_LOW);
         return new W3SchoolsTagSelectPage(driver).isAt();
     }
 }

@@ -29,13 +29,13 @@ public class GoogleCookieWindow extends WebPage {
     }
 
     public GoogleCookieWindow isAt() {
-        webWaitUtils.waitForClickable(moreOptionsButton, Timeouts.LOW);
+        webWaitUtils.waitForClickable(moreOptionsButton, Timeouts.VERY_LOW);
         return this;
     }
 
     public GoogleHomePage clickAgreeButton() {
         clickElement(new LocatorListUtils(buttonsList).getElementFromListByName("Accept all"));
-        webWaitUtils.waitForNotVisible(moreOptionsButton, Timeouts.LOW);
+        webWaitUtils.waitForNotVisible(moreOptionsButton, Timeouts.VERY_LOW);
         return new GoogleHomePage(driver).isAt();
     }
 }

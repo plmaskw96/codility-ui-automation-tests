@@ -3,8 +3,7 @@ package com.gitlab.rmarzec.stepdefs;
 import com.gitlab.rmarzec.framework.pages.google.home_page.GoogleHomePage;
 import com.gitlab.rmarzec.framework.pages.google.home_page.windows.GoogleCookieWindow;
 import com.gitlab.rmarzec.framework.pages.google.home_page.windows.GoogleSearchResultsWindow;
-import com.gitlab.rmarzec.framework.pages.w3_schools.W3SchoolsTagSelectPage;
-import com.gitlab.rmarzec.framework.pages.w3_schools.windows.W3SchoolsCookieWindow;
+import com.gitlab.rmarzec.framework.pages.w3_schools.tags.windows.W3SchoolsCookieWindow;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
@@ -15,6 +14,7 @@ public class GoogleStepdefs extends BaseStepdefs {
     }
 
     public GoogleStepdefs openHomePage() {
+        //TODO: Get URI from configuration.properties
         driver.get("https://www.google.pl/");
         new GoogleHomePage(driver)
                 .isAt();

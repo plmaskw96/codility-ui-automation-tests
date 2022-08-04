@@ -1,4 +1,4 @@
-package com.gitlab.rmarzec.framework.pages.google.home_page.windows;
+package com.gitlab.rmarzec.framework.pages.google.home_page.model;
 
 import com.gitlab.rmarzec.framework.utils.WebPage;
 import org.openqa.selenium.WebDriver;

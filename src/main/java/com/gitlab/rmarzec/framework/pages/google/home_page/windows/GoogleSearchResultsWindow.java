@@ -1,5 +1,6 @@
 package com.gitlab.rmarzec.framework.pages.google.home_page.windows;
 
+import com.gitlab.rmarzec.framework.pages.google.home_page.model.GoogleSearchResultModel;
 import com.gitlab.rmarzec.framework.utils.Timeouts;
 import com.gitlab.rmarzec.framework.utils.WebPage;
 import com.gitlab.rmarzec.framework.utils.locators_utils.LocatorListUtils;
