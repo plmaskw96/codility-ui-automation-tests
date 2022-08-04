@@ -20,7 +20,7 @@ public class DriverFactory {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--incognito", "-lang=en-GB");
         WebDriver webDriver = new ChromeDriver(chromeOptions);
-        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
         webDriver.manage().window().maximize();
         webDriver.manage().deleteAllCookies();
         tlDriver.set(webDriver);

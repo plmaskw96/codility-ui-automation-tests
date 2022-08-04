@@ -17,7 +17,11 @@ public class Task3Test extends BaseTest {
     public void Task3Test() {
 
         googleStepdefs
-                .openApplication()
+                .openHomePage()
+                .agreeCookies()
+                .searchForWithLuckyPick("HTML select tag - W3Schools");
+        w3SchoolsStepdefs
                 .agreeCookies();
+
     }
 }

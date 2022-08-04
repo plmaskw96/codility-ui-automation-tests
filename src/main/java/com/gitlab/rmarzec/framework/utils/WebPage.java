@@ -18,4 +18,9 @@ public class WebPage {
     public void clickElement(WebElement element) {
         element.click();
     }
+
+    public void enterText(WebElement element, String text) {
+        element.click();
+        element.sendKeys(text);
+    }
 }

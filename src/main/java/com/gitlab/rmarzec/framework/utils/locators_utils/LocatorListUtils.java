@@ -19,4 +19,12 @@ public class LocatorListUtils {
                 .findFirst()
                 .orElseThrow(() -> new NoSuchElementException("Element " + name + " not found!!!"));
     }
+
+    public WebElement getElementFromListByValue(String value) {
+        return listOfWebelements
+                .stream()
+                .filter(webElement -> webElement.getAttribute("value").equals(value))
+                .findFirst()
+                .orElseThrow(() -> new NoSuchElementException("Element with value " + value + " not found!!!"));
+    }
 }

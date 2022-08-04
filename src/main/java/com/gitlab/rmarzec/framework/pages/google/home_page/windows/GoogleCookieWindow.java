@@ -1,6 +1,6 @@
-package com.gitlab.rmarzec.framework.pages.google.windows;
+package com.gitlab.rmarzec.framework.pages.google.home_page.windows;
 
-import com.gitlab.rmarzec.framework.pages.google.GoogleMainPage;
+import com.gitlab.rmarzec.framework.pages.google.home_page.GoogleHomePage;
 import com.gitlab.rmarzec.framework.utils.Timeouts;
 import com.gitlab.rmarzec.framework.utils.WebPage;
 import com.gitlab.rmarzec.framework.utils.locators_utils.LocatorListUtils;
@@ -33,9 +33,9 @@ public class GoogleCookieWindow extends WebPage {
         return this;
     }
 
-    public GoogleMainPage clickAgreeButton() {
+    public GoogleHomePage clickAgreeButton() {
         clickElement(new LocatorListUtils(buttonsList).getElementFromListByName("Accept all"));
         webWaitUtils.waitForNotVisible(moreOptionsButton, Timeouts.LOW);
-        return new GoogleMainPage(driver).isAt();
+        return new GoogleHomePage(driver).isAt();
     }
 }
