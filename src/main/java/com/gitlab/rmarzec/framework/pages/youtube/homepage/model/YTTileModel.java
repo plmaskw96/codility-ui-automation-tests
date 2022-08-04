@@ -1,6 +1,7 @@
 package com.gitlab.rmarzec.framework.pages.youtube.homepage.model;
 
 import com.gitlab.rmarzec.framework.pages.youtube.homepage.component.YTTile;
+import com.gitlab.rmarzec.framework.utils.Timeouts;
 import com.gitlab.rmarzec.framework.utils.WebPage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
@@ -28,7 +29,7 @@ public class YTTileModel extends WebPage {
 
     public YTTile toModel() {
         return YTTile.builder()
-                .title(title.getText())
+                .title(webWaitUtils.waitForVisible(title, Timeouts.LOW).getText())
                 .channel(channel.getText())
                 .length(isDisplayed(live) ? live.getAttribute("innerHTML").trim() : length.getAttribute("innerHTML").trim())
                 .build();
