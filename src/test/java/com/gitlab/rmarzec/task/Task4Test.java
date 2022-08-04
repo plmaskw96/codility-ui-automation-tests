@@ -2,21 +2,15 @@ package com.gitlab.rmarzec.task;
 
 import com.gitlab.rmarzec.BaseTest;
 import com.gitlab.rmarzec.framework.utils.DriverFactory;
-import com.gitlab.rmarzec.framework.pages.youtube.homepage.component.YTTile;
-import com.gitlab.rmarzec.stepdefs.BaseStepdefs;
-import org.openqa.selenium.WebDriver;
+import com.gitlab.rmarzec.framework.utils.DriverType;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import java.util.ArrayList;
-import java.util.List;
-
 
 public class Task4Test extends BaseTest {
 
     @BeforeClass
     private void setUp() {
-        webDriver = new DriverFactory().initDriver();
+        webDriver = new DriverFactory().initDriver(DriverType.CHROME);
         initializeStepdefs();
     }
     @Test

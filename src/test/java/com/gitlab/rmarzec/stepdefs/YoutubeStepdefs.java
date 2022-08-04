@@ -12,7 +12,7 @@ public class YoutubeStepdefs extends BaseStepdefs {
 
     public YoutubeStepdefs openHomePage() {
         driver.get("https://www.youtube.com/");
-        new YoutubeHomePage(driver).isAt();
+        new YoutubeHomePage(driver).isAtWithCookie();
         return this;
     }
 
@@ -24,6 +24,7 @@ public class YoutubeStepdefs extends BaseStepdefs {
     }
 
     public YoutubeStepdefs printFirstTilesTitleChannelAndLenghtByNumber(int numberOfTiles) {
+        new YoutubeHomePage(driver).scrollToTile(numberOfTiles);
         new YoutubeHomePage(driver).printFirstTilesTitleChannelAndLenghtByNumber(numberOfTiles);
         return this;
     }

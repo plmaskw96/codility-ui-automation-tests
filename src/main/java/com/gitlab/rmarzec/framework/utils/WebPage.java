@@ -52,6 +52,10 @@ public class WebPage {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", webElement);
     }
 
+    public void scrollToBottom() {
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,document.body.scrollHeight)");
+    }
+
     public WebElement getSelectOption(WebElement element, String option) {
         return new Select(element)
                 .getOptions()
