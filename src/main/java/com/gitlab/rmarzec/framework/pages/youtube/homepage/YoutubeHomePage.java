@@ -39,10 +39,12 @@ public class YoutubeHomePage extends WebPage {
 
     public YoutubeHomePage printFirstTilesTitleChannelAndLenghtByNumber(int numberOfTiles) {
         youTubeFilmsList = listOfYoutubeFilms.stream().map(webelement -> new YTTileModel(driver, webelement).toModel()).collect(Collectors.toList());
+
+        //Some tiles are hidden, if last tile on the list has no readed lenght, move to and expand Trendings.
         if (youTubeFilmsList.get(youTubeFilmsList.size() - 1).getLength().isEmpty()) {
             getTrendingSection().expandTrendingSection();
+            youTubeFilmsList = listOfYoutubeFilms.stream().map(webelement -> new YTTileModel(driver, webelement).toModel()).collect(Collectors.toList());
         }
-        youTubeFilmsList = listOfYoutubeFilms.stream().map(webelement -> new YTTileModel(driver, webelement).toModel()).collect(Collectors.toList());
         System.out.println(youTubeFilmsList.stream().map(YTTile::toString).limit(numberOfTiles).collect(Collectors.toList()));
         return this;
     }
